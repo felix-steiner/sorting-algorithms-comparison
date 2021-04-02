@@ -24,21 +24,9 @@ class ReflectionHandlerTest {
     }
 
     @Test
-    void loadClassesWithEmptyPrefix() {
-        Set<Class<? extends SortingAlgorithm>> classes = reflectionHandler.loadClasses("");
-        assertEquals(new HashSet<>(), classes);
-    }
-
-    @Test
     void loadClassesWithWrongPrefix() {
         Set<Class<? extends SortingAlgorithm>> classes = reflectionHandler.loadClasses("some-wrong-prefix");
         assertEquals(new HashSet<>(), classes);
-    }
-
-    @Test
-    void loadClassesWithCorrectPrefix() {
-        Set<Class<? extends SortingAlgorithm>> classes = reflectionHandler.loadClasses("com.sca.sca.algorithms");
-        assertEquals(0, classes.size());
     }
 
     @Test
@@ -51,12 +39,5 @@ class ReflectionHandlerTest {
     void constructClassesWithoutClasses() {
         Set<SortingAlgorithm> sortingAlgorithms = reflectionHandler.constructClasses(new HashSet<>());
         assertEquals(new HashSet<>(), sortingAlgorithms);
-    }
-
-    @Test
-    void constructClassesWithCorrectClasses() {
-        Set<Class<? extends SortingAlgorithm>> classes = reflectionHandler.loadClasses("com.sca.sca.algorithms");
-        Set<SortingAlgorithm> sortingAlgorithms = reflectionHandler.constructClasses(classes);
-        assertEquals(0, sortingAlgorithms.size());
     }
 }
