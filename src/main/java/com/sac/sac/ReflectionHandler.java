@@ -1,6 +1,7 @@
 package com.sac.sac;
 
 import org.reflections.Reflections;
+import org.reflections.ReflectionsException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,7 +18,13 @@ public class ReflectionHandler {
     public Set<Class<? extends SortingAlgorithm>> loadClasses(String prefix) {
         logger.info("Loading subclasses of SortingAlgorithm with package prefix: {}", prefix);
         Reflections reflections = new Reflections(prefix);
-        return reflections.getSubTypesOf(SortingAlgorithm.class);
+
+        try {
+            return reflections.getSubTypesOf(SortingAlgorithm.class);
+        } catch (ReflectionsException e) {
+            logger.error("An unexpected error occurred while loading classes in {}:", prefix, e);
+            return new HashSet<>();
+        }
     }
 
     public Set<SortingAlgorithm> constructClasses(Set<Class<? extends SortingAlgorithm>> classes) {
@@ -30,7 +37,7 @@ public class ReflectionHandler {
                         .getDeclaredConstructor()
                         .newInstance());
             } catch (ClassNotFoundException | IllegalAccessException | NoSuchMethodException | InvocationTargetException | InstantiationException e) {
-                logger.error("An unexpected error occurred while constructing objects: ", e);
+                logger.error("An unexpected error occurred while constructing objects:", e);
             }
         }
 
