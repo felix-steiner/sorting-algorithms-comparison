@@ -1,4 +1,4 @@
-[![Java CI with Gradle](https://github.com/felix-steiner/sorting-algorithms-comparison/actions/workflows/gradle.yml/badge.svg)]
+![Java CI with Gradle](https://github.com/felix-steiner/sorting-algorithms-comparison/actions/workflows/gradle.yml/badge.svg)
 # Sorting Algorithms Comparison 🔬
 This repository compares several sorting algorithms implemented in Java 11. As of now following algorithms are implemented:
 - Bubblesort
