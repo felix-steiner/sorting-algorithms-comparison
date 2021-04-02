@@ -29,6 +29,7 @@ public class ReflectionHandler {
 
     public Set<SortingAlgorithm> constructClasses(Set<Class<? extends SortingAlgorithm>> classes) {
         Set<SortingAlgorithm> constructedClasses = new HashSet<>();
+        if (classes == null) return constructedClasses;
 
         for (Class<? extends SortingAlgorithm> clazz : classes) {
             try {
