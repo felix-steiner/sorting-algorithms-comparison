@@ -1,5 +1,6 @@
 package com.sac.sac;
 
+import com.sac.sac.algorithms.SortingAlgorithm;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -36,7 +37,7 @@ class ReflectionHandlerTest {
 
     @Test
     void loadClassesWithCorrectPrefix() {
-        Set<Class<? extends SortingAlgorithm>> classes = reflectionHandler.loadClasses("com.sca.sca");
+        Set<Class<? extends SortingAlgorithm>> classes = reflectionHandler.loadClasses("com.sca.sca.algorithms");
         assertEquals(0, classes.size());
     }
 
@@ -54,7 +55,7 @@ class ReflectionHandlerTest {
 
     @Test
     void constructClassesWithCorrectClasses() {
-        Set<Class<? extends SortingAlgorithm>> classes = reflectionHandler.loadClasses("com.sca.sca");
+        Set<Class<? extends SortingAlgorithm>> classes = reflectionHandler.loadClasses("com.sca.sca.algorithms");
         Set<SortingAlgorithm> sortingAlgorithms = reflectionHandler.constructClasses(classes);
         assertEquals(0, sortingAlgorithms.size());
     }

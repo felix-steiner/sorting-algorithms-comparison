@@ -1,5 +1,6 @@
 package com.sac.sac;
 
+import com.sac.sac.algorithms.SortingAlgorithm;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,7 +13,7 @@ public class Main {
         logger.info("### Started Sorting Algorithms Comparison application ###");
         final ReflectionHandler reflectionHandler = new ReflectionHandler();
 
-        Set<Class<? extends SortingAlgorithm>> classes = reflectionHandler.loadClasses("com.sac.sac");
+        Set<Class<? extends SortingAlgorithm>> classes = reflectionHandler.loadClasses("com.sac.sac.algorithms");
 
         for (SortingAlgorithm sa : reflectionHandler.constructClasses(classes)) {
             // TODO: measure time

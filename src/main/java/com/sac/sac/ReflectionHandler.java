@@ -1,5 +1,6 @@
 package com.sac.sac;
 
+import com.sac.sac.algorithms.SortingAlgorithm;
 import org.reflections.Reflections;
 import org.reflections.ReflectionsException;
 import org.slf4j.Logger;
