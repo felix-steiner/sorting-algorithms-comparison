@@ -1,12 +1,7 @@
 package com.sac.sac;
 
-import org.checkerframework.checker.units.qual.C;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -43,16 +38,16 @@ class NumberGeneratorTest {
 
     private int max(int[] numbers) {
         int max = numbers[0];
-        for(int i = 0; i < numbers.length; i++) {
-            if(numbers[i] > max) max = numbers[i];
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] > max) max = numbers[i];
         }
         return max;
     }
 
     private int min(int[] numbers) {
         int min = numbers[0];
-        for(int i = 0; i < numbers.length; i++) {
-            if(numbers[i] < min) min = numbers[i];
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] < min) min = numbers[i];
         }
         return min;
     }
