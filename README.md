@@ -3,6 +3,7 @@
 This repository compares several sorting algorithms implemented in Java 11. As of now following algorithms are implemented:
 - Bubblesort
 - Insertionsort
+- Selectionsort
 
 ## Getting Started 🚀
 1. Open a terminal and clone the repository
